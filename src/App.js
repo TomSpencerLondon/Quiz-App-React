@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   const handleAnswer = (answer) => {
-    // blah
+    // check for the answer
   };
 
   return questions.length > 0 ? (<div className='container'>

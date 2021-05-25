@@ -29,7 +29,7 @@ function App() {
     <button className='bg-white p-4 text-purple-800 font-semibold rounded shadow'>{questions[0].incorrect_answers[1]}</button>
     <button className='bg-white p-4 text-purple-800 font-semibold rounded shadow'>{questions[0].incorrect_answers[2]}</button>
     </div>
-  </div>) : <h1>Hey bro... we're loading!</h1>
+  </div>) : <h2 className='text-2xl text-white font-bold'>Loading...</h2>
 }
 
 export default App;

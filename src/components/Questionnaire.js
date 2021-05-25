@@ -4,7 +4,9 @@ const Button = ({ answer }) => (
   <button className='bg-white p-4 text-purple-800 font-semibold rounded shadow'>{answer}</button>
 );
 
-const Questionnaire = ({ data: { question, correct_answer, incorrect_answers }}) =>  {
+const Questionnaire = ({ handleAnswer, data: { question, correct_answer, incorrect_answers }}) =>  {
+  const shuffledAnswers = [correct_answer, ...incorrect_answers];
+
   return (<div>
     <div className='bg-white text-purple-800 p-10 rounded shadow-md'>
       <h2
@@ -14,10 +16,10 @@ const Questionnaire = ({ data: { question, correct_answer, incorrect_answers }})
     </div>
 
     <div className='grid grid-cols-2 gap-6 mt-4'>
-      <Button answer={correct_answer} />
-      <Button answer={incorrect_answers[0]} />
-      <Button answer={incorrect_answers[1]} />
-      <Button answer={incorrect_answers[2]} />
+      <Button onClick={() => handleAnswer(shuffledAnswers[0])} answer={shuffledAnswers[0]} />
+      <Button onClick={() => handleAnswer(shuffledAnswers[1])} answer={shuffledAnswers[1]} />
+      <Button onClick={() => handleAnswer(shuffledAnswers[2])} answer={shuffledAnswers[2]} />
+      <Button onClick={() => handleAnswer(shuffledAnswers[3])} answer={shuffledAnswers[3]} />
     </div>
   </div>)
 }

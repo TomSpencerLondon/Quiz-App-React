@@ -17,6 +17,10 @@ function App() {
 
   const handleAnswer = (answer) => {
     // check for the answer
+
+    // show another question
+
+    // change score if correct
   };
 
   return questions.length > 0 ? (<div className='container'>

@@ -5,11 +5,7 @@ const API_URL =
 
 function App() {
   const [questions, setQuestions] = useState([]);
-  const entities = {
-    '&#039;': "'",
-    '&quot;': '"',
-    // add more if needed
-  };
+
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -20,8 +16,10 @@ function App() {
 
   return questions.length > 0 ? (<div className='container'>
     <div className='bg-white text-purple-800 p-10 rounded-lg shadow-md w-full'>
-      <h2 className='text-2xl'>
-        {questions[0].question.replace(/&#?\w+;/g, match => entities[match])}
+      <h2
+        className='text-2xl'
+        dangerouslySetInnerHTML={{ __html: questions[0].question }}
+      >
       </h2>
     </div>
 
